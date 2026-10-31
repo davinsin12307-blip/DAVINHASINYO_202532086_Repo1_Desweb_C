@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Informasi dan formulir pendaftaran kunjungan museum">
+  <title>Kunjungan - Museum Mini Aksara Nusantara</title>
+</head>
+<body>
+  <a href="#konten">Lompat ke konten utama</a>
+  <header>
+    <p><strong>Museum Mini Aksara Nusantara</strong><br><small>Menjaga jejak tulisan leluhur</small></p>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="koleksi.html">Koleksi</a></li>
+        <li><a href="aksara-daerah.html">Aksara Daerah</a></li>
+        <li><a href="sejarah.html">Sejarah Aksara</a></li>
+        <li><a href="kunjungan.html" aria-current="page">Kunjungan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="konten">
+    <nav aria-label="Breadcrumb">
+      <p><a href="index.html">Beranda</a> &gt; Kunjungan</p>
+    </nav>
+
+    <h1>Kunjungan dan Pendaftaran</h1>
+
+    <section aria-labelledby="info">
+      <h2 id="info">Informasi Kunjungan</h2>
+      <h3>Jam Buka (Contoh)</h3>
+      <table border="1" cellpadding="6">
+        <caption>Jadwal kunjungan museum</caption>
+        <thead>
+          <tr><th scope="col">Hari</th><th scope="col">Jam Buka</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Selasa - Jumat</td><td><time datetime="09:00">09.00</time> - <time datetime="16:00">16.00</time></td></tr>
+          <tr><td>Sabtu - Minggu</td><td><time datetime="09:00">09.00</time> - <time datetime="17:00">17.00</time></td></tr>
+          <tr><td>Senin</td><td>Tutup</td></tr>
+        </tbody>
+      </table>
+      <h3>Tata Tertib</h3>
+      <ul>
+        <li>Jangan menyentuh koleksi.</li>
+        <li>Fotografi tanpa blitz.</li>
+        <li>Jaga ketenangan di ruang pamer.</li>
+      </ul>
+      <address>Alamat museum (contoh): Jl. Aksara No. 1, Jakarta</address>
+    </section>
+
+    <section aria-labelledby="form">
+      <h2 id="form">Formulir Pendaftaran Kunjungan</h2>
+      <p>Kolom bertanda <strong>*</strong> wajib diisi. Kembali ke <a href="koleksi.html">koleksi</a> jika ingin melihat dulu apa yang dipamerkan.</p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>1. Data Pengunjung</legend>
+
+          <p>
+            <label for="nama">Nama lengkap *</label><br>
+            <input type="text" id="nama" name="nama" minlength="3" maxlength="50" placeholder="Contoh: Budi Santoso" autocomplete="name" required>
+          </p>
+
+          <p>
+            <label for="email">Email *</label><br>
+            <input type="email" id="email" name="email" placeholder="nama@email.com" autocomplete="email" required>
+          </p>
+
+          <p>
+            <label for="telepon">Nomor telepon</label><br>
+            <input type="tel" id="telepon" name="telepon" pattern="[0-9]{10,13}" title="Isi 10 sampai 13 digit angka" placeholder="081234567890" autocomplete="tel">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Rencana Kunjungan</legend>
+
+          <p>
+            <label for="tanggal">Tanggal kunjungan *</label><br>
+            <input type="date" id="tanggal" name="tanggal" required>
+          </p>
+
+          <p>
+            <label for="jam">Jam kedatangan</label><br>
+            <input type="time" id="jam" name="jam" min="09:00" max="16:00">
+          </p>
+
+          <p>
+            <label for="jumlah">Jumlah pengunjung *</label><br>
+            <input type="number" id="jumlah" name="jumlah" min="1" max="30" required>
+          </p>
+
+          <fieldset>
+            <legend>Tujuan kunjungan *</legend>
+            <p>
+              <input type="radio" id="belajar" name="tujuan" value="belajar" required>
+              <label for="belajar">Belajar / tugas sekolah</label><br>
+              <input type="radio" id="penelitian" name="tujuan" value="penelitian">
+              <label for="penelitian">Penelitian</label><br>
+              <input type="radio" id="wisata" name="tujuan" value="wisata">
+              <label for="wisata">Wisata budaya</label>
+            </p>
+          </fieldset>
+
+          <p>
+            <label for="aksara">Aksara yang paling ingin dipelajari</label><br>
+            <select id="aksara" name="aksara">
+              <option value="">-- Pilih aksara --</option>
+              <optgroup label="Aksara Daerah">
+                <option value="jawa">Aksara Jawa</option>
+                <option value="bali">Aksara Bali</option>
+                <option value="sunda">Aksara Sunda</option>
+                <option value="lontara">Lontara</option>
+                <option value="batak">Surat Batak</option>
+                <option value="kaganga">Kaganga</option>
+              </optgroup>
+              <option value="semua">Semua</option>
+            </select>
+          </p>
+
+          <fieldset>
+            <legend>Kegiatan yang diminati</legend>
+            <p>
+              <input type="checkbox" id="tur" name="kegiatan" value="tur">
+              <label for="tur">Tur koleksi</label><br>
+              <input type="checkbox" id="workshop" name="kegiatan" value="workshop">
+              <label for="workshop">Workshop menulis nama dengan aksara</label><br>
+              <input type="checkbox" id="diskusi" name="kegiatan" value="diskusi">
+              <label for="diskusi">Diskusi naskah</label>
+            </p>
+          </fieldset>
+
+          <p>
+            <label for="pesan">Pesan atau permintaan khusus (maks. 300 karakter)</label><br>
+            <textarea id="pesan" name="pesan" rows="4" cols="40" maxlength="300" placeholder="Contoh: kami membawa rombongan pelajar"></textarea>
+          </p>
+        </fieldset>
+
+        <p>
+          <input type="checkbox" id="setuju" name="setuju" required>
+          <label for="setuju">Saya bersedia mengikuti tata tertib museum. *</label>
+        </p>
+
+        <p>
+          <button type="submit">Kirim Pendaftaran</button>
+          <button type="reset">Hapus Isian</button>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; 2026 Museum Mini Aksara Nusantara. Proyek praktikum Desain Web (museum fiktif untuk tujuan belajar).</p>
+    <address>Dibuat oleh [NAMA] - [NIM] | Kelas [KELAS]</address>
+    <p><a href="#konten">Kembali ke atas</a></p>
+  </footer>
+</body>
+</html>
